@@ -24,11 +24,17 @@ public class PracticeFormTest {
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Петр");
         $("#lastName").setValue("Петров");
-        $("#userNumber").setValue("petr@petrov.com");
+        $("#userEmail").setValue("petr@petrov.com");
         $(".custom-control-label").click();
+        $("#userNumber").setValue("89271111111");
         $("#dateOfBirthInput").shouldHave(text("15 Aug 2025"));
         $(".css-1hwfws3").setValue("Комментарий");
         $(".custom-control-label").click();
-
+        $("#currentAddress").setValue("Комментари");
+        $(".css-tlfecz-indicatorContainer").click();
+        $(".css-1uccc91-singleValue").click();
+        $(".css-19bqh2r").click();
+        $(".1uccc91-singleValue").click();
+        $(".btn btn-primary").click();
     }
-}
+

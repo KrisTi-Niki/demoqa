@@ -34,4 +34,4 @@ public class TextBoxTests {
         $("#output #permanentAddress").shouldHave(text("Another street 1"));
     }
 }
-}
+
