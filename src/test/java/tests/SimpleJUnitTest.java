@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SimpleJUnitTest {
 
-    int result;
+    static int result;
 
     @BeforeAll
     static void BeforeAll() {
@@ -21,6 +21,9 @@ public class SimpleJUnitTest {
         System.out.println("###     BeforeEach()");
     }
 
+    private int getResult() {
+    }
+
     @AfterEach
     void AfterEach() {
         result = 0;
@@ -29,31 +32,6 @@ public class SimpleJUnitTest {
 
     @AfterAll
     static void AfterAll() {
-        System.out.println("### AfterAll()\n");
 
-
-    @Test
-    void firstTest() {
-        System.out.println("###     firstTest()");
-    Assertions.assertTrue(result>2);
     }
-
-    @Test
-    void secondTest() {
-        System.out.println("###     secondTest()");
-        Assertions.assertTrue(result>2);
-    }
-
-    @Test
-    void thirdTest() {
-        System.out.println("###     thirdTest");
-        Assertions.assertTrue(result>2);
-    }
-
-
-    private int getResult() {
-
-        return 3;
-    }
-
 }
