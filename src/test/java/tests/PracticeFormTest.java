@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -45,14 +47,15 @@ public class PracticeFormTest {
         //Hobbies
         $(byText("Sports")).click();
 
+        $("#uploadPicture").scrollTo().click();
+
         //Picture
-        $("#uploadPicture").click();
-        $("#uploadPicture").uploadFromClasspath("Files/img/png/img/png/img.png");
+        $("#uploadPicture").uploadFromClasspath("files/images.jpg");
 
         //Current Address
         $("#currentAddress").setValue("Комментарий");
 
-        $("#stateCity-label").scrollTo().click();
+
 
         //State and City
         $(".css-19bqh2r").click();
@@ -63,6 +66,13 @@ public class PracticeFormTest {
 
         //submit
         $("#submit").click();
+
+
+
+        //Проверка
+
+
+
     }
 
 }
