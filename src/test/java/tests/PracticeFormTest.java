@@ -37,22 +37,23 @@ public class PracticeFormTest {
         $("#genterWrapper").$(byText("Male")).click();
 
         //Mobile
-        $("#userNumber").setValue("89271111111");
+        $("#userNumber").setValue("8927111111");
 
         //Date of Birth
         $("#dateOfBirthInput").click();
         $(".react-datepicker__day--weekend").click();
 
         //Subjects
-        $("#subjectsInput").setValue("Комментарий");
+        $("#subjectsInput").setValue("E");
+        $(".subjects-auto-complete__menu-list").$(byText("English")).click();
+
 
         //Hobbies
-        $(byText("Sports")).click();
-
+        $("#hobbiesWrapper").$(byText("Sports")).click();
 
 
         //Picture
-//        $("#uploadPicture").uploadFromClasspath("files/images.jpg");
+        $("#uploadPicture").uploadFromClasspath("images.jpg");
 
         $("#currentAddress").scrollTo().click();
 
@@ -61,7 +62,7 @@ public class PracticeFormTest {
 
 
         //State and City
-        $(".css-19bqh2r").click();
+        $("#state").click();
         $(byText("Uttar Pradesh")).click();
 
 
@@ -73,21 +74,19 @@ public class PracticeFormTest {
         $("#submit").click();
 
 
-
         //Проверка
         $(("#example-modal-sizes-title-lg")).shouldHave(text("Thanks for submitting the form"));
 
-        $(".modal-body").find(byText("Student Name")).closest("tr").shouldHave(text("Петр Петров"));
-        $(".modal-body").find(byText("Student Email")).closest("tr").shouldHave(text("petr@petrov.com"));
-        $(".modal-body").find(byText("Mobile")).closest("tr").shouldHave(text("89271111111"));
-        $(".modal-body").find(byText("Date of Birth")).closest("tr").shouldHave(text("27 July,2025"));
-        $(".modal-body").find(byText("Subjects")).closest("tr").shouldHave(text("Комментарий"));
-        $(".modal-body").find(byText("Hobbies")).closest("tr").shouldHave(text("Sports"));
-//        $(".modal-body").find(byText("Picture")).closest("tr").shouldHave(text("files/images.jpg"));
-        $(".modal-body").find(byText("Address")).closest("tr").shouldHave(text("Комментарий"));
-        $(".modal-body").find(byText("State and City")).closest("tr").shouldHave(text("Uttar Pradesh Agra"));
-
-
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Петр Петров"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("petr@petrov.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("8927111111"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("27 July,2025"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("images.jpg"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Комментарий"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
 
     }
 
